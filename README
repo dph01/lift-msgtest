@@ -1,0 +1,19 @@
+test to show <lift:Msgs showAll="true"></lift:Msgs> isn't showing field messages.
+
+See HelloWorld.scala, and index.html.
+
+class HelloWorld {
+  def howdy = {
+    S.error("a general error message")
+    S.error("myid","a field error message")
+    "#time *" #> date.map(_.toString)
+  }
+}
+
+Index.html - this calls both
+
+    <lift:Msgs showAll="true"></lift:Msgs>
+    <div class="lift:Msgs?showAll=true"></div>
+    
+the later shows the field error message, but the former doesn't.
+    
